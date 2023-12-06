@@ -1,4 +1,4 @@
-{% set version = '2.5' %}
+{% set version = "2.6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/twang_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/twang/twang_{{ version }}.tar.gz
-  sha256: fc355527c57e4f6e0f60d26d7c690c4475fcd5fb165d125fea7cc6b9fafc4ce5
+  sha256: 0b28382af11cebf675cdffc66990e011d751e9703d27e2ed41895ead5e667fdb
 
 build:
-  merge_build_host: True           # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -65,8 +65,7 @@ test:
 about:
   home: https://CRAN.R-project.org/package=twang
   license: GPL-3.0-only
-  summary: Provides functions for propensity score estimating and weighting, nonresponse weighting,
-    and diagnosis of the weights.
+  summary: Provides functions for propensity score estimating and weighting, nonresponse weighting, and diagnosis of the weights.
   license_family: GPL3
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
