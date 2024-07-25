@@ -1,4 +1,4 @@
-{% set version = "2.6" %}
+{% set version = "2.6.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/twang_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/twang/twang_{{ version }}.tar.gz
-  sha256: 0b28382af11cebf675cdffc66990e011d751e9703d27e2ed41895ead5e667fdb
+  sha256: 0bb87dcd8f9b0628d96c50b565e9aa6222dfeb446165e12f52e4ee9b2e4e9179
 
 build:
   merge_build_host: true  # [win]
@@ -24,7 +24,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("m2w64_c") }}      # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
