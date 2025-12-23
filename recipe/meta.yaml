@@ -1,4 +1,4 @@
-{% set version = "2.6.1" %}
+{% set version = "2.6.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/twang_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/twang/twang_{{ version }}.tar.gz
-  sha256: 0bb87dcd8f9b0628d96c50b565e9aa6222dfeb446165e12f52e4ee9b2e4e9179
+  sha256: 0efdec4fb71c5280e80feef9c85047227bb53f6dcd7334ad45a122d90d28886a
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
